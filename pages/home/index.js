@@ -89,6 +89,7 @@ export default function Home() {
           className="btn btn-primary rounded-pill fs-5 fw-bold ms-auto mb-5 px-4 d-flex align-items-center gap-3"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
+          data-cy="btn-create-schedule"
         >
           <img src="/img/plus.svg" />
           <span>Buat Jadwal Kuliah</span>
