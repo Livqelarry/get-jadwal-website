@@ -24,7 +24,11 @@ export default function NavbarLogged() {
     <div className="navbar navbar--logged text-white">
       <div className="container d-flex justify-content-between align-items-center">
         <h1 className="fw-bold display-6 navbar__text-logo">GetJadwal</h1>
-        <button onClick={() => logout()} className="btn btn-primary fs-5 fw-bold btn-checkout">
+        <button
+          onClick={() => logout()}
+          className="btn btn-primary fs-5 fw-bold btn-checkout"
+          data-cy="btn-logout"
+        >
           Check out | {email}
         </button>
       </div>
