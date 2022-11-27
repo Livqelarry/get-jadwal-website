@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f4f4;
+}
+
+.bg-secondary {
+  background-color: #f8f8f8 !important;
+}
+
+.rounded-12 {
+  border-radius: 12px;
+}
+
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.text-danger {
+  color: #ed4c5c !important;
+}
+.text-secondary {
+  color: #bbbbbb !important;
+}
+.text-primary {
+  color: #d9019c !important;
+}
+
+.fs-7 {
+  font-size: 12px;
+}
+
+.btn {
+  padding: 12px 32px;
+}
+.btn-primary {
+  background: #d9019c !important;
+  outline-color: #d9019c;
+  border: none;
+  box-shadow: none !important;
+}
+.btn-primary:hover {
+  background: #b0037f !important;
+  border: none;
+}
+.btn-primary:active {
+  background: #4c0037 !important;
+}
+.btn-checkout {
+  border-radius: 12px;
+}
+
+.card {
+  border-radius: 12px;
+  border: none;
+}
+.card-schedule {
+  padding: 20px 24px;
+  width: 100%;
+  height: 106px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+}
+.card-list-schedule {
+  width: 100%;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  height: 100%;
+}
+
+.card-checkin {
+  padding: 48px 65px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+}
+.card-checkin .title-text {
+  margin-bottom: 53px;
+}
+
+.form-control {
+  padding: 12px 15px;
+  background-color: #f4f4f4;
+  border: 1px solid #e5e5e5;
+  box-shadow: none;
+  border-radius: 6px;
+}
+.form-control:active {
+  border: 1px solid #d9019c;
+}
+.form-control:focus {
+  border: 1px solid #d9019c;
+  outline: none;
+  box-shadow: none;
+}
+.form-control--filled {
+  background-color: white;
+}
+.form-control-danger {
+  outline: 1px solid #ed4c5c;
+}
+
+.navbar {
+  padding: 32px 0;
+  background-color: #3a0b48;
+  margin-bottom: 50px;
+}
+.navbar__text-logo {
+  font-weight: 700;
+}
+
+.schedules {
+  padding-right: 20px;
+}
+
+.wrapper-list-schedules {
+  max-height: calc(100vh - 420px);
+  overflow-y: scroll;
+  padding-right: 6px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 14px;
+  border-radius: 40px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  width: 7px;
+  background: #e6e6e6;
+  padding: 2px;
+  cursor: pointer;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background: #bbbbbb;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #787878;
+}/*# sourceMappingURL=style.css.map */
