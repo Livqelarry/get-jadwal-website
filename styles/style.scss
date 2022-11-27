@@ -36,6 +36,9 @@ body {
   &-secondary {
     color: $secondary !important;
   }
+  &-secondary-2 {
+    color: #888888 !important;
+  }
   &-primary {
     color: $pink !important;
   }
@@ -47,6 +50,8 @@ body {
 
 .btn {
   padding: 12px 32px;
+  outline: none;
+  border: none;
   &-primary {
     background: $pink !important;
     outline-color: $pink;
@@ -63,6 +68,21 @@ body {
   &-checkout {
     border-radius: 12px;
   }
+  &-danger {
+    background-color: $red !important;
+  }
+  &-secondary {
+    background: #f4f4f4 !important;
+    color: #888888 !important;
+    &:hover {
+      color: #555555 !important;
+    }
+  }
+}
+
+.img-trash {
+  width: 88px;
+  height: 88px;
 }
 
 a {

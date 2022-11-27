@@ -26,6 +26,9 @@ body {
 .text-secondary {
   color: #bbbbbb !important;
 }
+.text-secondary-2 {
+  color: #888888 !important;
+}
 .text-primary {
   color: #d9019c !important;
 }
@@ -36,6 +39,8 @@ body {
 
 .btn {
   padding: 12px 32px;
+  outline: none;
+  border: none;
 }
 .btn-primary {
   background: #d9019c !important;
@@ -52,6 +57,21 @@ body {
 }
 .btn-checkout {
   border-radius: 12px;
+}
+.btn-danger {
+  background-color: #ed4c5c !important;
+}
+.btn-secondary {
+  background: #f4f4f4 !important;
+  color: #888888 !important;
+}
+.btn-secondary:hover {
+  color: #555555 !important;
+}
+
+.img-trash {
+  width: 88px;
+  height: 88px;
 }
 
 a {
