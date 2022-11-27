@@ -8,6 +8,7 @@ export default function Details() {
   const { day } = router.query;
   const [data, setData] = useState(null);
   const [id, setId] = useState("");
+  const [mataKuliah, setMataKuliah] = useState("");
 
   const getDetailSchedule = async () => {
     const email = localStorage.getItem("email");
@@ -36,6 +37,27 @@ export default function Details() {
       .then((response) => response.json())
       .then((response) => {
         document.getElementById("btnClose").click();
+        getDetailSchedule();
+      })
+      .catch((err) => console.error(err));
+  };
+
+  const addSchedule = async () => {
+    const email = localStorage.getItem("email");
+
+    const day = window.location.href.split("/").pop();
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: mataKuliah,
+        day: day,
+      }),
+    };
+
+    fetch("https://getjadwal.api.devcode.gethired.id/schedule?email=" + email, options)
+      .then((response) => response.json())
+      .then(() => {
         getDetailSchedule();
       })
       .catch((err) => console.error(err));
@@ -124,6 +146,63 @@ export default function Details() {
         )}
       </main>
 
+      {/* modal add */}
+      <div
+        className="modal fade"
+        id="add"
+        tabIndex="-1"
+        aria-labelledby="addLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content" data-cy="form-add">
+            <div className="modal-header">
+              <h5 className="modal-title fw-bold" id="addLabel">
+                Buat Jadwal Kuliah
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+                data-cy="close-modal"
+              ></button>
+            </div>
+            <div className="modal-body">
+              <div className="mb-3">
+                <label className="fw-bold mb-1" htmlFor="mataKuliah">
+                  Mata Kuliah
+                </label>
+                <input
+                  type="text"
+                  className="form-control form-control--filled"
+                  placeholder="Masukkan Mata Kuliah"
+                  data-cy="form-matkul"
+                  value={mataKuliah}
+                  onChange={(e) => {
+                    setMataKuliah(e.target.value);
+                  }}
+                />
+              </div>
+              <div></div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-primary ms-auto rounded-pill"
+                  data-cy="btn-submit"
+                  onClick={() => {
+                    addSchedule();
+                  }}
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* modal delete */}
       <div
         className="modal fade"
         id="delete"
