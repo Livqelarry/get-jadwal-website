@@ -194,7 +194,7 @@ export default function Details() {
                     addSchedule();
                   }}
                 >
-                  Submit
+                  Simpan
                 </button>
               </div>
             </div>
@@ -242,7 +242,7 @@ export default function Details() {
                 data-cy="btn-submit"
                 onClick={() => del()}
               >
-                Submit
+                Simpan
               </button>
             </div>
           </div>

@@ -189,7 +189,7 @@ export default function Home() {
                     addSchedule();
                   }}
                 >
-                  Submit
+                  Simpan
                 </button>
               </div>
             </div>
