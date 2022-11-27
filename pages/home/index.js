@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import NavbarLogged from "../../layout/navbar-logged";
 
@@ -97,11 +98,11 @@ export default function Home() {
             false
           ) : (
             <>
-              <CardJadwal day="Senin" matkul={schedule.monday} />
-              <CardJadwal day="Selasa" matkul={schedule.tuesday} />
-              <CardJadwal day="Rabu" matkul={schedule.wednesday} />
-              <CardJadwal day="Kamis" matkul={schedule.thursday} />
-              <CardJadwal day="Jumat" matkul={schedule.friday} />
+              <CardJadwal dayEn="monday" day="Senin" matkul={schedule.monday} />
+              <CardJadwal dayEn="tuesday" day="Selasa" matkul={schedule.tuesday} />
+              <CardJadwal dayEn="wednesday" day="Rabu" matkul={schedule.wednesday} />
+              <CardJadwal dayEn="thursday" day="Kamis" matkul={schedule.thursday} />
+              <CardJadwal dayEn="friday" day="Jumat" matkul={schedule.friday} />
             </>
           )}
         </div>
@@ -201,20 +202,22 @@ export default function Home() {
 
 export function CardJadwal(props) {
   return (
-    <div className="card card-schedule mb-4" data-cy="card-day">
-      <h3 className="fw-bold" data-cy={`card-title-${props.day}`}>
-        {props.day}
-      </h3>
-      {props.matkul > 0 ? (
-        <p className="card-subtitle mb-0 text-primary fs-6" data-cy={`card-desc-${props.day}`}>
-          {props.matkul} Mata Kuliah
-        </p>
-      ) : (
-        <p className="card-subtitle mb-0 text-secondary fs-7" data-cy={`card-desc-${props.day}`}>
-          Belum ada mata kuliah
-        </p>
-      )}
-    </div>
+    <Link href={`/schedule/${props.dayEn}`} className="card card-schedule mb-4">
+      <div data-cy="card-day">
+        <h3 className="fw-bold" data-cy={`card-title-${props.day}`}>
+          {props.day}
+        </h3>
+        {props.matkul > 0 ? (
+          <p className="card-subtitle mb-0 text-primary fs-6" data-cy={`card-desc-${props.day}`}>
+            {props.matkul} Mata Kuliah
+          </p>
+        ) : (
+          <p className="card-subtitle mb-0 text-secondary fs-7" data-cy={`card-desc-${props.day}`}>
+            Belum ada mata kuliah
+          </p>
+        )}
+      </div>
+    </Link>
   );
 }
 
