@@ -110,11 +110,12 @@ export default function Details() {
                 <div
                   className="card card-item flex-row rounded-12 d-flex justify-content-between align-items-center py-4 px-5 mb-3"
                   key={index}
-                  data-cy="card-item-title"
                 >
-                  <p className="fs-5 mb-0">{item.title}</p>
+                  <p className="fs-5 mb-0" data-cy="card-item-title">
+                    {item.title}
+                  </p>
                   <div className="d-flex gap-4 align-items-center">
-                    <a href="javascript:void(0)">
+                    <a href="javascript:void(0)" data-cy="card-item-edit">
                       <img src="/img/card-item-edit.svg" alt="edit" data-cy="card-item-edit" />
                     </a>
                     <a
@@ -124,6 +125,7 @@ export default function Details() {
                       onClick={() => {
                         setId(item.id);
                       }}
+                      data-cy="card-item-delete"
                     >
                       <img
                         src="/img/card-item-delete.svg"
@@ -209,6 +211,7 @@ export default function Details() {
         tabIndex="-1"
         aria-labelledby="deleteLabel"
         aria-hidden="true"
+        data-cy="form-delete"
       >
         <div className="modal-dialog">
           <div className="modal-content" data-cy="form-add">
@@ -229,7 +232,7 @@ export default function Details() {
               <button
                 type="button"
                 className="btn btn-secondary rounded-pill fw-bold"
-                data-cy="btn-close"
+                data-cy="form-delete"
                 data-bs-dismiss="modal"
                 aria-label="Close"
                 id="btnClose"
@@ -239,10 +242,10 @@ export default function Details() {
               <button
                 type="button"
                 className="btn btn-danger rounded-pill fw-bold"
-                data-cy="btn-submit"
                 onClick={() => del()}
+                data-cy="card-item-delete"
               >
-                Simpan
+                Hapus
               </button>
             </div>
           </div>
